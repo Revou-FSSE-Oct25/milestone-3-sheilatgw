@@ -34,7 +34,7 @@ export default function ProductCard({ product, user }: Props) {
           <IoMdStar style={{ fontSize: 20, color: '#fdc700' }}/>
             <p className="text-gray-500 text-sm">${product.rating.rate} | {product.rating.count} sold</p>
         </div>
-        <AddToCartSmallButton user={user}/>
+        <AddToCartSmallButton user={user} product={product} />
       </div>
     </div>
   )

@@ -29,7 +29,7 @@ export default async function ProductDetail({
       <p className="text-xl font-bold mt-4">${product.price}</p>
       <div className="mt-auto p-3 flex items-center justify-between gap-8">
           <Wishlist user = {user}/>
-       <AddToCartLargeButton user = {user}/>
+       <AddToCartLargeButton user={user} product={product} />
         </div>
       <p className="text-gray-600 mt-4">{product.description}</p>
       </div> 

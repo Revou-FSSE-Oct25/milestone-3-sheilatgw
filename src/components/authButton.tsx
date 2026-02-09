@@ -1,18 +1,13 @@
 import Link from "next/link";
 import { getSession } from "@/lib/auth";
 import { logoutAction } from "@/app/login/action";
+import LogoutButton from "./logout";
 
 export default async function AuthButton() {
   const user = await getSession();
 
   if (user) {
-    return (
-      <form action={logoutAction}>
-        <button className="py-2 px-6 bg-red-600 text-white rounded-sm cursor-pointer">
-          Logout
-        </button>
-      </form>
-    );
+      return <LogoutButton />;
   }
 
   return (

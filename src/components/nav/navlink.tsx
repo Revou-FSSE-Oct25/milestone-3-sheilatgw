@@ -2,6 +2,7 @@
 import Link from "next/link"
 import { User } from "@/lib/auth"
 import { useState } from "react"
+import CartBadge from "@/components/cartBadge"
 import {IoClose, IoMenu, IoCartOutline, IoInformationCircleOutline, IoHeartOutline} from "react-icons/io5"
 import { MdOutlineDashboardCustomize } from "react-icons/md";
 import { PiPackageLight } from "react-icons/pi";
@@ -26,9 +27,9 @@ export default function Navlink({ user }: Props){
                     </Link>
                 </li>
                 <li>
-                    <Link href="/cart" className="block py-2 px-3 text-gray-800 hover:bg-gray-100 rounded-sm md:hover:bg-transparent md:p-0">
-                    <IoCartOutline size={20}/>
-                    </Link>
+                    <div className="block py-2 px-3 text-gray-800 hover:bg-gray-100 rounded-sm md:hover:bg-transparent md:p-0">
+                    <CartBadge user={user}/>
+                    </div>
                 </li>
                 <li>
                     <Link href="/wishlist" className="block py-2 px-3 text-gray-800 hover:bg-gray-100 rounded-sm md:hover:bg-transparent md:p-0">
