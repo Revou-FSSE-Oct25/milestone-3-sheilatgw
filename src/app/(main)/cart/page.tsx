@@ -5,7 +5,7 @@ import Header from "@/components/Header"
 import { IoMdAdd } from "react-icons/io";
 import { FiMinus } from "react-icons/fi";
 import { FaRegTrashAlt } from "react-icons/fa";
-import CheckPay from "@/components/CheckPay";
+import { CheckoutButton } from "@/components/CheckPay";
 
 export default function CartPage() {
   const items = useCartStore(state => state.items)
@@ -17,7 +17,7 @@ export default function CartPage() {
     (sum, item) => sum + item.price * item.quantity, 0)
 
   return (
-    <div className="p-26">
+    <div className="p-30">
         <h1 className="text-xl font-bold mb-4">My Cart</h1>
         <div className="flex item-center gap-10">
         <div className="">
@@ -49,7 +49,7 @@ export default function CartPage() {
       <div className="flex flex-col items-center gap-2 border border-gray-200 shadow-sm p-3 rounded-lg w-75 h-50">
         <p className="justify-center">Total Price</p>
         <h2 className=" font-bold text-2xl">{totalPrice.toFixed(2)} USD</h2>
-        <CheckPay/>
+        <CheckoutButton/>
         <div className="mt-1 border-t-2 border-gray-200">
             <p className="text-sm text-gray-500 mt-1">Shipping fee will be calculated when checkout</p>
         </div>

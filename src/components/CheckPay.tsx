@@ -1,11 +1,38 @@
-import React from 'react'
+"use client"
 
-function CheckPay() {
+import { useRouter } from "next/navigation"
+import { useCartStore } from "@/store/cartStore"
+
+export function CheckoutButton() {
+  const router = useRouter()
+  const items = useCartStore(state => state.items)
+
+  const handleCheckout = () => {
+    if (items.length === 0) return
+    router.push("/checkout")
+  }
+
   return (
-    <button className="flex uppercase items-center justify-center gap-2 w-full bg-blue-800 text-stone-50 font-50 font-medium py-2 px-6 text-base rounded-xl hover:bg-blue-950 cursor-pointer">
-        checkout
+    <button onClick={handleCheckout} className="flex uppercase items-center justify-center gap-2 w-full bg-blue-800 text-stone-50 font-medium py-2 px-6 text-base rounded-xl hover:bg-blue-950 cursor-pointer">
+      Checkout
     </button>
   )
 }
 
-export default CheckPay
+export function PayButton() {
+  const router = useRouter()
+  const items = useCartStore(state => state.items)
+
+  const handleCheckout = () => {
+    if (items.length === 0) return
+    router.push("/checkout")
+  }
+
+  return (
+    <button onClick={handleCheckout} className="flex uppercase items-center justify-center gap-2 w-full bg-blue-800 text-stone-50 font-medium py-2 px-6 text-base rounded-xl hover:bg-blue-950 cursor-pointer">
+      Pay Now
+    </button>
+  )
+}
+
+
