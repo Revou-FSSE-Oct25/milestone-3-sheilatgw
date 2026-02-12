@@ -32,7 +32,7 @@ export default function ProductCard({ product, user }: Props) {
       <div className="mt-auto p-3 flex items-center justify-between">
         <div className="flex items-center space-x-1">
           <IoMdStar style={{ fontSize: 20, color: '#fdc700' }}/>
-            <p className="text-gray-500 text-sm">${product.rating.rate} | {product.rating.count} sold</p>
+            <p className="text-gray-500 text-sm">{product.rating.rate} | {product.rating.count} sold</p>
         </div>
         <AddToCartSmallButton user={user} product={product} />
       </div>

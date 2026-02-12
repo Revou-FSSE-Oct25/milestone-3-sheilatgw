@@ -2,6 +2,7 @@
 
 import { useCartStore } from "@/store/cartStore"
 import Header from "@/components/Header"
+import Link from "next/link";
 import { IoMdAdd } from "react-icons/io";
 import { FiMinus } from "react-icons/fi";
 import { FaRegTrashAlt } from "react-icons/fa";
@@ -21,7 +22,11 @@ export default function CartPage() {
         <h1 className="text-xl font-bold mb-4">My Cart</h1>
         <div className="flex item-center gap-10">
         <div className="">
-      {items.length === 0 && <p>Cart kosong</p>}
+      {items.length === 0 && <div className="flex flex-col items-center justify-center gap-4 mb-4 border border-gray-200 shadow-sm p-3 rounded-lg w-150 h-30">
+        <p className="text-xl">You haven't add anything</p>
+        <Link href="/" className="text-blue-800">Let's start shopping!</Link>
+        </div>
+        }
 
       {items.map(item => (
         <div key={item.id} className="flex items-center gap-4 mb-4 border border-gray-200 shadow-sm p-3 rounded-lg w-150">

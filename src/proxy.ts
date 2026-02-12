@@ -6,6 +6,8 @@ import { SearchParamsContext } from "next/dist/shared/lib/hooks-client-context.s
 const PROTECTED_ROUTES = {
     '/admin': ['admin'],
     '/dashboard': ['user', 'admin'],
+    '/cart': ['user', 'admin'],
+    '/checkout': ['user', 'admin'],
 } as const;
 
 export function proxy(request: NextRequest){

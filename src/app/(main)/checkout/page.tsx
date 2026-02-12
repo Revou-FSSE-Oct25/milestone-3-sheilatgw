@@ -52,7 +52,7 @@ function page() {
         </div>
         <div className='flex justify-between text-gray-500'>
             <p className='text-sm'>Shipping Fee</p>
-            <p className='text-sm'>0.00 USD</p>
+            <p className='text-sm text-green-700'>Free</p>
         </div>
         <div className="mt-1 border-t-2 border-gray-200"></div>
         <div className='flex justify-between'>
